@@ -1,0 +1,8 @@
+bower_components/
+build/
+node_modules/
+/.github/
+/.eslintrc.json
+/.gitattributes
+/.project
+/.travis.yml
