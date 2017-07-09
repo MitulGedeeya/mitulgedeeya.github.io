@@ -1,0 +1,103 @@
+<!--
+@license
+Copyright (c) 2016 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+
+<link rel="import" href="../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../bower_components/iron-image/iron-image.html">
+<link rel="import" href="../bower_components/paper-styles/shadow.html">
+<link rel="import" href="../bower_components/paper-styles/typography.html">
+<link rel="import" href="../bower_components/paper-styles/color.html">
+<link rel="import" href="../bower_components/iron-flex-layout/iron-flex-layout-classes.html">
+<link rel="import" href="shared-styles.html">
+<link rel="import" href="app-theme.html">
+
+<dom-module id="profile-aboutme">
+  <template>
+    <style include="shared-styles iron-flex iron-flex-alignment">
+       :host {
+        display: block;
+        padding: 10px;
+
+        @apply --layout-vertical;
+        @apply --layout-center;
+      }
+
+      .card {
+        height: 460px;
+        width: 500px;
+      }
+
+      .main-container {
+        margin: 16px;
+      }
+
+      iron-image.profile-pic {
+        border-radius: 50%;
+        --iron-image-width: 150px;
+        --iron-image-height: 150px;
+        @apply --shadow-elevation-2dp
+      }
+
+      p.name {
+        @apply --paper-font-title;
+        margin: 8px;
+        font-size: 17px;
+      }
+
+      p.title {
+        margin: 0px;
+        @apply --paper-font-subhead;
+      }
+
+      p.introduction {
+        margin: 0px;
+        padding-top: 24px;
+        @apply --paper-font-body1;
+      }
+
+      a:link {
+        color: var(--paper-light-blue-500);
+        text-decoration: none;
+      }
+
+      a:visited {
+        color: var(--paper-light-blue-500);
+        text-decoration: none;
+      }
+    </style>
+
+    <div class="main-container layout vertical center">
+      <div class="card">
+        <div class="layout vertical center">
+          <iron-image class="profile-pic" src="/images/mitul-gedeeya.jpg"></iron-image>
+          <p class="name">Mitul Arvindbhai Gedeeya</p>
+          <p class="title">Full Stack developer</p>
+          <p class="introduction">I have Bachelor Degree in Computer Engineering from L.D.College of Engg. I am <b>Sun Certified Java Programmer</b>,
+            having 4+ years of experience.<br><br> I have worked on real-time projects. I have good knowledge of <a href="https://en.wikipedia.org/wiki/Scrum_(software_development)"
+              target="_blank"> Methodology - SCRUM</a> which helps in building “High-Tech” solutions for end users and results
+            in low maintenance costs.<br><br> I offer all kinds of <a href="https://en.wikipedia.org/wiki/Java_(programming_language)"
+              target="_blank">Java</a>,
+            <a href="https://developer.android.com/index.html" target="_blank">Android</a>,
+            <a href="https://www.polymer-project.org/" target="_blank">Google Polymer</a> and <a href="http://spring.io/"
+              target="_blank">Spring Framework</a> related services. I am flexible to work on any project and if needed, i
+            will learn whatever is necessary for the project !!
+          </p>
+        </div>
+      </div>
+    </div>
+  </template>
+
+  <script>
+    class AboutMe extends Polymer.Element {
+      static get is() { return 'profile-aboutme'; }
+    }
+
+    window.customElements.define(AboutMe.is, AboutMe);
+  </script>
+</dom-module>
