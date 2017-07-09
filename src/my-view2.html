@@ -13,19 +13,47 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
 <dom-module id="my-view2">
   <template>
-    <style include="shared-styles">
+    <style include="shared-styles iron-flex iron-flex-alignment">
        :host {
         display: block;
         padding: 10px;
+
+        @apply --layout-vertical;
+        @apply --layout-center;
+      }
+
+      .main-container {
+        margin: 16px;
+        height: 600px;
+        width: 648px;
+      }
+
+      .skill-card {
+        width: 200px;
+        height: 200px;
+        margin: 8px;
+        color: #757575;
+        border-radius: 2px;
+        background-color: #fff;
+        box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
       }
     </style>
 
-    <div class="card">
-      <div class="circle">2</div>
-      <h1>View Two</h1>
-      <p>Ea duis bonorum nec, falli paulo aliquid ei eum.</p>
-      <p>Id nam odio natum malorum, tibique copiosae expetenda mel ea.Detracto suavitate repudiandae no eum. Id adhuc minim
-        soluta nam.Id nam odio natum malorum, tibique copiosae expetenda mel ea.</p>
+    <div class="main-container layout vertical center">
+      <div class="fit layout horizontal wrap">
+        <div class="skill-card">
+        </div>
+        <div class="skill-card">
+        </div>
+        <div class="skill-card">
+        </div>
+        <div class="skill-card">
+        </div>
+        <div class="skill-card">
+        </div>
+        <div class="skill-card">
+        </div>
+      </div>
     </div>
   </template>
 
