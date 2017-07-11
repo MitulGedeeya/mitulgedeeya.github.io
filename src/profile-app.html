@@ -89,7 +89,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         <iron-selector selected="[[page]]" attr-for-selected="name" class="drawer-list" role="navigation">
           <a name="aboutme" class="nav-menu" href="aboutme" on-tap="_toggleDrawer">About Me</a>
           <a name="view2" class="nav-menu" href="view2" on-tap="_toggleDrawer">Skills</a>
-          <a name="view3" class="nav-menu" href="view3" on-tap="_toggleDrawer">Latest Projects</a>
+          <a name="projects" class="nav-menu" href="projects" on-tap="_toggleDrawer">Projects</a>
           <a name="view4" class="nav-menu" href="view4" on-tap="_toggleDrawer">Education</a>
           <a name="view5" class="nav-menu" href="view5" on-tap="_toggleDrawer">Blog</a>
           <a name="view6" class="nav-menu" href="view6" on-tap="_toggleDrawer">Contact</a>
@@ -98,7 +98,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       <iron-pages selected="[[page]]" attr-for-selected="name" fallback-selection="view404" role="main">
         <profile-aboutme name="aboutme"></profile-aboutme>
         <my-view2 name="view2"></my-view2>
-        <my-view3 name="view3"></my-view3>
+        <my-projects name="projects"></my-projects>
         <my-view4 name="view4"></my-view4>
         <my-view5 name="view5"></my-view5>
         <my-view6 name="view6"></my-view6>

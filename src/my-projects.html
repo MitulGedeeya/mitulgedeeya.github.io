@@ -1,0 +1,181 @@
+<!--
+@license
+Copyright (c) 2016 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+
+<link rel="import" href="../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../bower_components/paper-styles/typography.html">
+<link rel="import" href="../bower_components/paper-styles/shadow.html">
+<link rel="import" href="../bower_components/iron-image/iron-image.html">
+<link rel="import" href="../bower_components/iron-flex-layout/iron-flex-layout-classes.html">
+<link rel="import" href="shared-styles.html">
+<link rel="import" href="app-theme.html">
+
+<dom-module id="my-projects">
+  <template>
+    <style include="shared-styles iron-flex iron-flex-alignment">
+       :host {
+        display: block;
+        padding: 10px;
+        @apply --layout-vertical;
+        @apply --layout-center;
+      }
+
+      .main-container {
+        margin: 16px;
+        height: 600px;
+        width: 948px;
+      }
+
+      .project-card:hover {
+        @apply --shadow-elevation-6dp;
+      }
+
+      .project-card {
+        width: 300px;
+        height: 300px;
+        margin: 8px;
+        position: relative;
+        color: #757575;
+        border-radius: 2px;
+        background-color: #fff;
+        box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+      }
+
+      .project-icon {
+        margin: 8px;
+      }
+
+      .project-name {
+        @apply --paper-font-subhead;
+        font-weight: bold
+      }
+
+      .project-description {
+        color: var(--primary-text-color);
+        margin: 16px 16px 0 16px;
+        @apply --paper-font-body1;
+      }
+
+      .project-type-container {
+        transform: rotate(270deg);
+        position: absolute;
+        left: -18px;
+        top: -18px;
+      }
+
+      .project-type {
+        @apply --paper-font-subhead;
+        font-size: 18px;
+        margin: 0;
+        transform: rotate(-45deg);
+        position: absolute;
+        left: 0px;
+        top: 20px;
+        color: #fff;
+      }
+
+      a:visited {
+        text-decoration: none;
+        color: var(--primary-text-color);
+      }
+
+      a:link {
+        text-decoration: none;
+        color: var(--primary-text-color);
+      }
+    </style>
+
+    <div class="main-container layout vertical center">
+      <div class="container layout horizontal center wrap">
+        <template is="dom-repeat" items="[[data]]">
+          <a href="[[item.link]]" target="_blank">
+            <div class="project-card layout vertical center">
+              <iron-image class="project-icon" src="/images/[[item.logo]].png"></iron-image>
+              <h1 class="project-name">[[item.name]]</h1>
+              <h1 class="project-description">[[generateDesc(item, index)]]</h1>
+              <iron-image class="project-type-container" src="/images/ribbon.png">
+              </iron-image>
+              <h1 class="project-type">[[item.type]]</h1>
+            </div>
+          </a>
+        </template>
+      </div>
+    </div>
+  </template>
+
+
+  <script>
+    class MyProjects extends Polymer.Element {
+      static get is() { return 'my-projects'; }
+
+      static get properties() {
+        return {
+          data: {
+            type: Array,
+            value: function () {
+              return [{
+                "type": "Android",
+                "name": "South Dubbed Movies",
+                "description": "This application provides a way to watch latest South Indian Hindi Dubbed Movies, Bolllywood Movies, Bollywood and Hollywood HD Songs. <br><br>I used <b>Youtube APIs</b> to provide solution.",
+                "logo": "south",
+                "link": "https://play.google.com/store/apps/details?id=com.ummid.south.dubbed"
+              },
+              {
+                "type": "Android",
+                "name": "Hindi Shayaries 2017",
+                "description": "Hindi Shayari is the best and effective way to express your feelings and emotions to your loved ones. <br><br>The app includes shayaries that covers almost all areas of emotions.",
+                "logo": "shayari",
+                "link": "https://play.google.com/store/apps/details?id=com.ummid.hindishayaries"
+              },
+              {
+                "type": "Android",
+                "name": "Bank Helper",
+                "description": "Bank Balance Inquiry/Bank Balance Check app helps you to know your bank balance. <br><br>Using this application you can easily check your bank balance to missed call to your bank balance check number.",
+                "logo": "bank",
+                "link": "https://play.google.com/store/apps/details?id=com.ummid.bankhelpcenter"
+              },
+              {
+                "type": "Android",
+                "name": "Quiz",
+                "description": "Quiz is the best application for those who want to improve his knowledge. <br><br>This is generic application.<br><br><b>Note:: </b> This is not published anywhere.",
+                "logo": "quiz",
+                "link": ""
+              },
+              {
+                "type": "Polymer",
+                "name": "Quiz Admin Panel",
+                "description": "This is admin panel fully created in <b>Polymer 2.0</b>. With the help of this, admin user can create Quiz and its questions.<br><br><br><b>Note:: </b> This is not published anywhere.",
+                "logo": "quiz",
+                "link": ""
+              },
+              {
+                "type": "Spring",
+                "name": "Quiz Server",
+                "description": "This is Server which contains every <b>REST APIs</b> created using Spring Boot and Hibernate.<br><br><br><b>Note:: </b> This is not published anywhere.",
+                "logo": "quiz",
+                "link": ""
+              }];
+            }
+          }
+        }
+      }
+
+      generateDesc(item, index) {
+        let self = this
+        setTimeout(function () {
+          let container = self.shadowRoot.querySelector('.container');
+          let description = container.getElementsByClassName('project-description')[index];
+          description.innerHTML = item.description;
+        }, 200);
+      }
+    }
+
+    window.customElements.define(MyProjects.is, MyProjects);
+  </script>
+</dom-module>
