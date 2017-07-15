@@ -73,13 +73,12 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
       .project-type {
         @apply --paper-font-subhead;
-        font-size: 18px;
+        font-size: 16px;
         margin: 0;
-        transform: rotate(-45deg);
         position: absolute;
-        left: 0px;
-        top: 20px;
-        color: #fff;
+        left: 10px;
+        top: 10px;
+        color: var(--app-primary-color);
       }
 
       a:visited {
@@ -101,8 +100,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
               <iron-image class="project-icon" src="/images/[[item.logo]].png"></iron-image>
               <h1 class="project-name">[[item.name]]</h1>
               <h1 class="project-description">[[generateDesc(item, index)]]</h1>
-              <iron-image class="project-type-container" src="/images/ribbon.png">
-              </iron-image>
               <h1 class="project-type">[[item.type]]</h1>
             </div>
           </a>
@@ -157,7 +154,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                 "link": ""
               },
               {
-                "type": "Spring",
+                "type": "Spring Boot",
                 "name": "Quiz Server",
                 "description": "This is Server which contains every <b>REST APIs</b> created using Spring Boot and Hibernate.<br><br><br><b>Note:: </b> This is not published anywhere.",
                 "logo": "quiz",
