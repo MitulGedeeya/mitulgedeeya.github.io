@@ -3,7 +3,7 @@
   "shell": "src/profile-app.html",
   "fragments": [
     "src/my-introduction.html",
-    "src/my-view2.html",
+    "src/my-experience.html",
     "src/my-projects.html",
     "src/my-education04.html"
   ],
