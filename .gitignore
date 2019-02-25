@@ -5,3 +5,4 @@ node_modules/
 /.gitattributes
 /.project
 /.travis.yml
+bower_components/

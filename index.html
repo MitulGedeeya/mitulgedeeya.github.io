@@ -1,95 +1,629 @@
-<!--
-@license
-Copyright (c) 2016 The Polymer Project Authors. All rights reserved.
-This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
-The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
-The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
-Code distributed by Google as part of the polymer project is also
-subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
--->
-
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html>
 
 <head>
-  <meta charset="utf-8">
-  <meta name="generator" content="Polymer Starter Kit">
-  <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Mitul Gedeeya - Freelancer web developer | Google Polymer | Node.js | Vue.js | Java</title>
+    <meta name="description" content="I have 5+ years of software development experience. Contact me for any software related services. I work on Google Polymer, Node.js, Vue.js, and Java as well.">
+    <link rel=”canonical” href="https://mitulgedeeya.github.io" />
+    <meta name=”robots” content=”index,follow”>
 
-  <title>Mitul Gedeeya</title>
-  <meta name="description" content="Full Stack Developer">
+    <!-- twitter -->
 
-  <!--
-      If deploying to a non-root path, replace href="/" with the full path to the project root.
-      For example: href="/polymer-starter-kit/relative-path-example/"
-    -->
-  <base href="/">
+    <meta name=”twitter:title” content="Mitul Gedeeya">
+    <meta name=”twitter:description” content="I have 5+ years of software development experience. Contact me for any software related services. I work on Google Polymer, Node.js, Vue.js, and Java as well.">
+    <meta name=”twitter:image” content="https://mitulgedeeya.github.io/img/img-profile.jpg">
+    <meta name=”twitter:site” content="@heymitul">
+    <meta name=”twitter:creator” content="@heymitul">
 
-  <link rel="icon" href="images/favicon.ico">
+    <!-- favicon -->
+    <link href="favicon.png" rel=icon>
 
-  <!-- See https://goo.gl/OOhYW5 -->
-  <link rel="manifest" href="manifest.json">
+    <!-- web-fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Hind:300,400,500,600,700" rel="stylesheet">
 
-  <!-- See https://goo.gl/qRE0vM -->
-  <meta name="theme-color" content="#3f51b5">
+    <!-- font-awesome -->
+    <link href="css/font-awesome.min.css" rel="stylesheet">
 
-  <!-- Add to homescreen for Chrome on Android. Fallback for manifest.json -->
-  <meta name="mobile-web-app-capable" content="yes">
-  <meta name="application-name" content="Mitul Gedeeya">
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
 
-  <!-- Add to homescreen for Safari on iOS -->
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <meta name="apple-mobile-web-app-title" content="Mitul Gedeeya">
+    <!-- owl carousal -->
+    <link href="css/owl.carousel.css" rel="stylesheet">
 
-  <!-- Homescreen icons -->
-  <link rel="apple-touch-icon" href="images/manifest/icon-48x48.png">
-  <link rel="apple-touch-icon" sizes="72x72" href="images/manifest/icon-72x72.png">
-  <link rel="apple-touch-icon" sizes="96x96" href="images/manifest/icon-96x96.png">
-  <link rel="apple-touch-icon" sizes="144x144" href="images/manifest/icon-144x144.png">
-  <link rel="apple-touch-icon" sizes="192x192" href="images/manifest/icon-192x192.png">
+    <!-- Style CSS -->
+    <link href="css/style.css" rel="stylesheet">
 
-  <!-- Tile icon for Windows 8 (144x144 + tile color) -->
-  <meta name="msapplication-TileImage" content="images/manifest/icon-144x144.png">
-  <meta name="msapplication-TileColor" content="#3f51b5">
-  <meta name="msapplication-tap-highlight" content="no">
-
-  <script>
-    // Register the base URL
-    const baseUrl = document.querySelector('base').href;
-
-    // Load and register pre-caching Service Worker
-    if ('serviceWorker' in navigator) {
-      window.addEventListener('load', function () {
-        navigator.serviceWorker.register(baseUrl + 'service-worker.js');
-      });
-    }
-  </script>
-
-  <!-- Load webcomponents-loader.js to check and load any polyfills your browser needs -->
-  <script src="bower_components/webcomponentsjs/webcomponents-loader.js"></script>
-
-  <!-- Load your application shell -->
-  <link rel="import" href="src/profile-app.html">
-
-  <!-- Add any global styles for body, document, etc. -->
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Roboto', 'Noto', sans-serif;
-      line-height: 1.5;
-      min-height: 100vh;
-      background-color: #eeeeee;
-    }
-  </style>
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
 </head>
 
 <body>
-  <profile-app></profile-app>
-  <noscript>
-    Please enable JavaScript to view this website.
-  </noscript>
-  <!-- Built with love using Polymer Starter Kit -->
+    <div id="main-wrapper">
+        <!-- Page Preloader -->
+        <div id="preloader">
+            <div id="status">
+                <div class="status-mes"></div>
+            </div>
+        </div>
+
+        <header class="header">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="profile-img">
+                            <img src="img/img-profile.jpg" class="img-responsive" alt="" />
+                        </div>
+                        <!-- Profile Image -->
+                    </div>
+                    <div class="col-md-9">
+                        <div class="name-wrapper">
+                            <h1 class="name">Mitul Gedeeya</h1>
+                            <span>Freelance Full Stack Web Developer</span>
+                        </div>
+                        <p>
+                            interested in new opportunities and challenging projects in Software development.
+                            I have worked on real-time projects. I have good knowledge of Software Development Life
+                            Cycle (SDLC) which helps in building “High-Tech” solutions for end users and results in low
+                            maintenance costs.<br><br>
+
+                            <b>I aim to create better world along with the programmers of the world !</b>
+                        </p>
+
+
+                        <div class="row">
+                            <div class="col-md-3">
+                                <div class="personal-details">
+                                    <strong>June 6, 1992</strong>
+                                    <small>BIRTH</small>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="personal-details">
+                                    <strong>Indian</strong>
+                                    <small>NATIONALITY</small>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="personal-details">
+                                    <strong>GUJARATI, HINDI, ENGLISH</strong>
+                                    <small>LANGUAGE</small>
+                                </div>
+                            </div>
+                        </div>
+
+                        <ul class="social-icon">
+                            <li><a href="https://www.facebook.com/heymitul" target="_blank"><i class="fa fa-facebook"
+                                        aria-hidden="true"></i></a></li>
+                            <li><a href="https://twitter.com/heymitul" target="_blank"><i class="fa fa-twitter"
+                                        aria-hidden="true"></i></a></li>
+                            <li><a href="www.linkedin.com/in/immitul" target="_blank"><i class="fa fa-linkedin"
+                                        aria-hidden="true"></i></a></li>
+                            <li><a href="https://www.github.com/mitulgedeeya" target="_blank"><i class="fa fa-github"
+                                        aria-hidden="true"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- .header-->
+
+        <section class="section-wrapper">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="section-title">
+                            <h2>My Activity</h2>
+                        </div>
+                    </div>
+                    <div class="col-md-9">
+                        <div class="row">
+                            <div class="col-sm-2">
+                                <div class="item-stats">
+                                    <div class="item-stats-value">100%</div>
+                                    <div class="item-stats-name">Jobs Success</div>
+                                </div>
+                            </div>
+                            <div class="col-sm-2">
+                                <div class="item-stats">
+                                    <div class="item-stats-value">100%</div>
+                                    <div class="item-stats-name">On Budget</div>
+                                </div>
+                            </div>
+                            <div class="col-sm-2">
+                                <div class="item-stats">
+                                    <div class="item-stats-value">100%</div>
+                                    <div class="item-stats-name">On Time</div>
+                                </div>
+                            </div>
+                            <div class="col-sm-2">
+                                <div class="item-stats">
+                                    <div class="item-stats-value">> 30</div>
+                                    <div class="item-stats-name">Hours weekly Available</div>
+                                </div>
+                            </div>
+                            <div class="col-sm-2">
+                                <div class="item-stats">
+                                    <div class="item-stats-value"> &lt;24</div>
+                                    <div class="item-stats-name">Hour Response Time</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- .work-history-wrapper -->
+
+        <section class="expertise-wrapper section-wrapper">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="section-title">
+                            <h2>My Specialities</h2>
+                        </div>
+                    </div>
+
+                    <div class="col-md-9">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="expertise-item">
+                                    <h3>Google Polymer</h3>
+
+                                    <p>
+                                        I have worked on Polymer 1.0, 2.0 and 3.0 as well.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="expertise-item">
+                                    <h3>Node.js</h3>
+
+                                    <p>
+                                        I have worked on realtime projects with Express.js.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="expertise-item">
+                                    <h3>Vue.js</h3>
+
+                                    <p>
+                                        I have started working on Vue.js since 6 months.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="expertise-item">
+                                    <h3>Java (Spring Framework)</h3>
+
+                                    <p>
+                                        I have started
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- .row -->
+
+
+            </div>
+        </section>
+        <!-- .expertise-wrapper -->
+
+        <section class="section-wrapper skills-wrapper">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="section-title">
+                            <h2>Skills</h2>
+                        </div>
+                    </div>
+
+                    <div class="col-md-9">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="progress-wrapper">
+
+                                    <h3>CODING SKILLS</h3>
+
+                                    <div class="progress-item">
+                                        <span class="progress-title">Java</span>
+
+                                        <div class="progress">
+                                            <div class="progress-bar" role="progressbar" aria-valuenow="95"
+                                                aria-valuemin="0" aria-valuemax="100" style="width: 95%;"><span class="progress-percent">95%</span>
+                                            </div>
+                                        </div>
+                                        <!-- /.progress -->
+                                    </div>
+                                    <!-- /.skill-progress -->
+
+                                    <div class="progress-item">
+                                        <span class="progress-title">JavaScript</span>
+
+                                        <div class="progress">
+                                            <div class="progress-bar" role="progressbar" aria-valuenow="93"
+                                                aria-valuemin="0" aria-valuemax="100" style="width: 93%;"><span class="progress-percent">93%</span>
+                                            </div>
+                                        </div>
+                                        <!-- /.progress -->
+                                    </div>
+                                    <!-- /.skill-progress -->
+
+                                    <div class="progress-item">
+                                        <span class="progress-title">CSS3</span>
+
+                                        <div class="progress">
+                                            <div class="progress-bar" role="progressbar" aria-valuenow="90"
+                                                aria-valuemin="0" aria-valuemax="100" style="width: 90%"><span class="progress-percent">90%</span>
+                                            </div>
+                                        </div>
+                                        <!-- /.progress -->
+                                    </div>
+                                    <!-- /.skill-progress -->
+
+                                    <div class="progress-item">
+                                        <span class="progress-title">HTML5</span>
+
+                                        <div class="progress">
+                                            <div class="progress-bar" role="progressbar" aria-valuenow="87"
+                                                aria-valuemin="0" aria-valuemax="100" style="width: 87%"><span class="progress-percent">87%</span>
+                                            </div>
+                                        </div>
+                                        <!-- .progress -->
+                                    </div>
+                                    <!-- .skill-progress -->
+
+                                </div>
+                                <!-- /.progress-wrapper -->
+                            </div>
+                        </div>
+                        <!--.row -->
+                    </div>
+                </div>
+
+            </div>
+            <!-- .container-fluid -->
+        </section>
+        <!-- .skills-wrapper -->
+
+        <section class="section-wrapper section-experience">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="section-title">
+                            <h2>Work Experience</h2>
+                        </div>
+                    </div>
+                    <div class="col-md-9">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="content-item">
+                                    <small>2018 - Present</small>
+                                    <h3>Full Stack Web Developer</h3>
+                                    <h4>Self Employed</h4>
+
+                                    <p>Surat, India</p>
+                                </div>
+                                <!-- .experience-item -->
+                            </div>
+                            <div class="col-md-6">
+                                <div class="content-item">
+                                    <small>2016 - 2018</small>
+                                    <h3>Full Stack Developer</h3>
+                                    <h4>Dreamworld Solutions</h4>
+
+                                    <p>Surat, India</p>
+                                </div>
+                                <!-- .experience-item -->
+                            </div>
+                        </div>
+                        <div class="row">
+
+                            <div class="col-md-6">
+                                <div class="content-item">
+                                    <small>2014 - 2016</small>
+                                    <h3>Jr. Java Developer</h3>
+                                    <h4>Dreamworld Solutions</h4>
+
+                                    <p>Surat, India</p>
+                                </div>
+                                <!-- .experience-item -->
+                            </div>
+                            <div class="col-md-6">
+                                <div class="content-item">
+                                </div>
+                                <!-- .experience-item -->
+                            </div>
+                        </div>
+                    </div>
+                    <!--.row-->
+                </div>
+            </div>
+            <!-- .container -->
+        </section>
+        <!-- .section-experience -->
+
+        <section class="section-education section-wrapper">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="section-title">
+                            <h2>Education</h2>
+                        </div>
+                    </div>
+
+                    <div class="col-md-9">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="content-item">
+                                    <small>2009 - 2013</small>
+                                    <h3>Computer Engineering</h3>
+                                    <h4>L.D. College of Engineering</h4>
+
+                                    <p>Ahmedabad, India</p>
+                                </div>
+                                <!-- .experience-item -->
+                                <div class="content-item">
+                                    <small>2007 - 2009</small>
+                                    <h3>Higher Secondary Study</h3>
+                                    <h4>Shree Swaminarayan Gurukul</h4>
+
+                                    <p>Surat, India</p>
+                                </div>
+                                <!-- .experience-item -->
+                                <div class="content-item">
+                                    <small>1997-2007</small>
+                                    <h3>Primary Education</h3>
+                                    <h4>Asutosh Vidhyalay</h4>
+
+                                    <p>Surat, India</p>
+                                </div>
+                                <!-- .experience-item -->
+                            </div>
+                        </div>
+                        <!--.row-->
+                    </div>
+
+                </div>
+                <!--.row-->
+            </div>
+            <!-- .container -->
+        </section>
+        <!-- .section-education -->
+
+        <section class="review-section section-wrapper">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="section-title">
+                            <h2>Recent Reviews</h2>
+                        </div>
+                    </div>
+
+                    <div class="col-md-9">
+                        <div id="review">
+                            <div class="item">
+                                <div class="media">
+                                    <div class="media-left">
+                                        <img src="img/img-testimonial-2.jpg" alt="avatar" />
+                                    </div>
+
+                                    <div class="media-body">
+                                        <div class="user-name">Jonathan Canales</div>
+                                        <!--.user-name-->
+
+                                        <div class="rating" data-star_rating="5.0">
+                                            <div class="rating-total">
+                                                <!-- Change rating percentage rate-0, rate-1, rate-2, rate-3, rate-4, rate-5  -->
+                                                <div class="rating-progress rate-5">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!--.rating-->
+                                    </div>
+                                </div>
+
+
+                                <div class="review-text">
+                                    Working with Mitul is just easy, he provides high-value ideas and strategies to the
+                                    project all the way. Awesome service. Definitely, I will be working with him in the
+                                    near future.
+                                </div>
+                                <!--.review-text-->
+                            </div>
+                            <!--.item-->
+
+                            <div class="item">
+                                <div class="media">
+                                    <div class="media-left">
+                                        <img src="img/img-testimonial-1.jpg" alt="avatar" />
+                                    </div>
+
+                                    <div class="media-body">
+                                        <div class="user-name">Jeff Soto</div>
+                                        <!--.user-name-->
+
+                                        <div class="rating" data-star_rating="5.0">
+                                            <div class="rating-total">
+                                                <!-- Change rating percentage rate-0, rate-1, rate-2, rate-3, rate-4, rate-5  -->
+                                                <div class="rating-progress rate-5">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!--.rating-->
+                                    </div>
+                                </div>
+                                <div class="review-text">
+                                    I'm so lucky to have found Mitul. He is very good at what he does and has clear
+                                    communication and always on time with any requests. I will definitely be hiring him
+                                    again for some more work.
+                                </div>
+                                <!--.review-text-->
+                            </div>
+                            <!--.item-->
+
+                            <div class="item">
+                                <div class="media">
+                                    <div class="media-left">
+                                        <img src="img/img-testimonial-3.jpg" alt="avatar" />
+                                    </div>
+
+                                    <div class="media-body">
+                                        <div class="user-name">Thomas Eckhardt</div>
+                                        <!--.user-name-->
+
+                                        <div class="rating" data-star_rating="5.0">
+                                            <div class="rating-total">
+                                                <!-- Change rating percentage rate-0, rate-1, rate-2, rate-3, rate-4, rate-5  -->
+                                                <div class="rating-progress rate-5">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!--.rating-->
+                                    </div>
+                                </div>
+                                <div class="review-text">
+                                    The quality of Mitul's work exceeded our high expectations. His commitment to the
+                                    project and skills were extraordinary. Communication was top-notch, like the whole
+                                    cooperation. We highly recommend Mitul and plan on hiring him for more jobs in the
+                                    near future.
+                                </div>
+                                <!--.review-text-->
+                            </div>
+                            <!--.item-->
+
+                            <div class="item">
+                                <div class="media">
+                                    <div class="media-left">
+                                        <img src="img/unknown.png" alt="avatar" />
+                                    </div>
+
+                                    <div class="media-body">
+                                        <div class="user-name">Alex Lim</div>
+                                        <!--.user-name-->
+
+                                        <div class="rating" data-star_rating="5.0">
+                                            <div class="rating-total">
+                                                <!-- Change rating percentage rate-0, rate-1, rate-2, rate-3, rate-4, rate-5  -->
+                                                <div class="rating-progress rate-5">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!--.rating-->
+                                    </div>
+                                </div>
+                                <div class="review-text">
+                                    Good communicator and programmer. Not much hassle throughout the contract. You
+                                    should hire him now!
+                                </div>
+                                <!--.review-text-->
+                            </div>
+                            <!--.item-->
+
+                            <div class="item">
+                                <div class="media">
+                                    <div class="media-left">
+                                        <img src="img/unknown.png" alt="avatar" />
+                                    </div>
+
+                                    <div class="media-body">
+                                        <div class="user-name">Mompati Mokoka</div>
+                                        <!--.user-name-->
+
+                                        <div class="rating" data-star_rating="5.0">
+                                            <div class="rating-total">
+                                                <!-- Change rating percentage rate-0, rate-1, rate-2, rate-3, rate-4, rate-5  -->
+                                                <div class="rating-progress rate-5">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!--.rating-->
+                                    </div>
+                                </div>
+                                <div class="review-text">
+                                    Communication was very good. I got professional help and we finished the tasks on
+                                    time.
+                                </div>
+                                <!--.review-text-->
+                            </div>
+                            <!--.item-->
+
+                        </div>
+                        <!--#review-->
+                    </div>
+                </div>
+                <!-- /.row -->
+            </div>
+            <!-- /.container -->
+        </section>
+        <!-- .review-section -->
+
+        <section class="section-contact section-wrapper">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="section-title">
+                            <h2>Contact</h2>
+                        </div>
+                    </div>
+
+                    <div class="col-md-9">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <address>
+                                    <strong>Address</strong><br>
+                                    105, Shivanagar-2, Lalita Chowck,<br>
+                                    Katargam, Surat 395004
+                                </address>
+                            </div>
+                            <div class="col-md-3">
+                                <address>
+                                    <strong>Phone Number</strong><br>
+                                    +918690979299
+                                </address>
+                            </div>
+                            <div class="col-md-3">
+                                <address>
+                                    <strong>Email</strong><br>
+                                    <a href="mailto:imitul.karishyen@gmail.com">imitul.karishyen@gmail.com</a>
+                                </address>
+                            </div>
+
+                        </div>
+                        <!--.row-->
+                    </div>
+                </div>
+                <!--.row-->
+
+            </div>
+            <!--.container-fluid-->
+        </section>
+        <!--.section-contact-->
+    </div>
+    <!-- #main-wrapper -->
+
+    <!-- jquery -->
+    <script src="js/jquery-2.1.4.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="js/bootstrap.min.js"></script>
+    <!--owl carousal-->
+    <script src="js/owl.carousel.min.js"></script>
+    <!--theme script-->
+    <script src="js/scripts.js"></script>
 </body>
 
 </html>
